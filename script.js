@@ -1,3 +1,51 @@
+const titles = ["킹덤 오브 헤븐", "패션 오브 크라이스트", "나니아 연대기: 사자, 마녀 그리고 옷장", "반지의 제왕: 반지 원정대", "몬티 파이튼의 성배"];
+const ratings = [7.09, 7.53, 7.14, 8.44, 7.80];
+const years = [2004, 2005, 2004, 2001, 1975];
+let sum = 0;
+for (let i = 0; i < ratings.length; i++) {
+    sum = sum + ratings[i];
+}
+console.log("합계:", sum);
+
+
+const average = sum / ratings.length;
+
+console.log("평균:", average);
+
+let max = ratings[0];
+
+let maxIndex = 0;
+
+let count = 0;
+
+
+
+for (let i = 0; i < ratings.length; i++) {
+    if (ratings[i] > max) {
+        max = ratings[i];
+        maxIndex = i;
+    }
+    if (ratings[i] >= 8) count++;
+}
+
+console.log("최고:", titles[maxIndex], max);
+console.log("8점 이상:", count + "편");
+
+for (let i = 0; i < 5; i++) {
+  let label;
+
+  if (ratings[i] >= 8.5) {
+    label = "명작";
+  } else if (ratings[i] >= 7) {
+    label = "추천";
+  } else {
+    label = "보통";
+  }
+
+  console.log(titles[i] + " (" + years[i] + ") : " + ratings[i] + " " + label); 
+}
+
+
 
 
 
